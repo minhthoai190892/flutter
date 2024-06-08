@@ -1,4 +1,4 @@
-git checkout -b Finance_Management-part-2
+git checkout -b Travel_App-part-1
 git add .
-git commit -m "Finance_Management-part-2"
-git push -u origin Finance_Management-part-2
+git commit -m "Travel_App-part-1"
+git push -u origin Travel_App-part-1
