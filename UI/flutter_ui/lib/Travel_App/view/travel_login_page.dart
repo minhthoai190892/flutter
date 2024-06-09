@@ -1,5 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/index.dart';
+import 'package:gap/gap.dart';
+
+import '../widgets/icon_button_widget.dart';
 
 class TravelLoginPage extends StatefulWidget {
   const TravelLoginPage({super.key});
@@ -41,14 +45,44 @@ class _TravelLoginPageState extends State<TravelLoginPage> {
                     ),
                     child: Column(
                       children: [
-                        const Text(
-                            'Lorem ipsum dolor sit amet\n consectetur adipisicing elit. '),
-                        const Text('Lorem ipsum dolor '),
-                        Container(
-                          child: const Center(
-                            child: Text('Get Started'),
+                        Center(
+                          child: DotsIndicator(
+                            dotsCount: 5,
+                            position: 2,
                           ),
                         ),
+                        const Gap(24),
+                        const Text(
+                          'Lorem ipsum dolor sit amet\n consectetur adipisicing elit. ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: Color.fromRGBO(124, 132, 100, 1),
+                          ),
+                        ),
+                        const Gap(16),
+                        const Text('Lorem ipsum dolor '),
+                        const Gap(16),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const TravelMainPage(),
+                            ));
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            decoration: BoxDecoration(
+                                color: const Color.fromRGBO(124, 132, 100, 1),
+                                borderRadius: BorderRadius.circular(24)),
+                            child: const Center(
+                              child: Text(
+                                'Get Started',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Gap(16),
                         SizedBox(
                           height: 24,
                           child: Stack(
@@ -61,12 +95,18 @@ class _TravelLoginPageState extends State<TravelLoginPage> {
                                   color: Colors.white,
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 8),
-                                  child: const Text('or Login with'),
+                                  child: const Text(
+                                    'or Login with',
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(124, 132, 100, 1),
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        const Gap(16),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -93,23 +133,6 @@ class _TravelLoginPageState extends State<TravelLoginPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class IconButtonWidget extends StatelessWidget {
-  final IconData iconData;
-  const IconButtonWidget({
-    super.key,
-    required this.iconData,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey), shape: BoxShape.circle),
-      child: IconButton(onPressed: () {}, icon: Icon(iconData)),
     );
   }
 }

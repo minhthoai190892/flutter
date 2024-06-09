@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Travel_App/view/travel_login_page.dart';
 
-import 'index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TravelApp(),
+      home: const TravelLoginPage(),
     );
   }
 }
