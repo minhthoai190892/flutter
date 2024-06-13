@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Hiking_Guide/views/hiking_login_page.dart';
 import 'package:flutter_ui/Travel_App/view/travel_login_page.dart';
+import 'package:flutter_ui/index.dart';
 
 
 void main() {
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TravelLoginPage(),
+      home: const HikingLoginPage(),
     );
   }
 }

@@ -2,3 +2,5 @@
 export 'Finance_Management/view/finance_home_page.dart';
 // https://youtu.be/Ph8qOg5OFvE?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=2
 export 'Travel_App/view/travel_main_page.dart';
+// https://youtu.be/Bum_NlhO2XI?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=210
+export 'Hiking_Guide/views/hiking_guide_app.dart';

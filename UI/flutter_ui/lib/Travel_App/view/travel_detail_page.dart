@@ -23,7 +23,11 @@ class _TravelDetailPageState extends State<TravelDetailPage> {
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.grey[200], shape: BoxShape.circle),
-                    child: const Icon(Icons.arrow_back),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: const Icon((Icons.arrow_back))),
                   ),
                   const Expanded(
                       child: Center(
@@ -60,7 +64,8 @@ class _TravelDetailPageState extends State<TravelDetailPage> {
                           ]),
                       const Gap(16),
                       const SizedBox(
-                        height: 400,/*  */
+                        height: 400,
+                        /*  */
                         child: TabBarView(children: [
                           Text(
                               'Lorem ipsum dolor sit amet\n consectetur adipisicing elit.'),
