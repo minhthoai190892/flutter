@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ui/Hiking_Guide/views/hiking_guide_app.dart';
 import 'package:gap/gap.dart';
 
 import '../widgets/login_widget.dart';
@@ -19,32 +20,38 @@ class HikingLoginPage extends StatelessWidget {
               decoration: const BoxDecoration(color: Colors.red),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 6,
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: SingleChildScrollView(
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Lorem ipsum dolor sit, amet consectetur',
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
                     ),
-                    Gap(8),
-                    Text(
+                    const Gap(8),
+                    const Text(
                       ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae exercitationem facilis sit, odio unde reprehenderit libero animi cum labore assumenda, perspiciatis culpa.',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16),
                     ),
-                    Gap(24),
-                    LoginWidget(text: 'Sign in with Google'), Gap(8),
-                    LoginWidget(text: 'Sign in with Apple'),
-                    Gap(16),
+                    const Gap(24),
+                    InkWell(
+                        onTap: () =>
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const HikingGuideApp(),
+                            )),
+                        child: const LoginWidget(text: 'Sign in with Google')),
+                    const Gap(8),
+                    const LoginWidget(text: 'Sign in with Apple'),
+                    const Gap(16),
 
-                    Text("Don't you have an account? Register"),
+                    const Text("Don't you have an account? Register"),
                     // Text.rich(
                     //   TextSpan(
                     //     children: [
