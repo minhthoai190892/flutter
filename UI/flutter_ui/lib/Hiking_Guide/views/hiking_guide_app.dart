@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class HikingGuideApp extends StatelessWidget {
@@ -122,20 +120,45 @@ class HikingGuideApp extends StatelessWidget {
                     const Gap(12),
                     Row(
                       children: [
-                        const CircleAvatar(),
-                        const CircleAvatar(),
-                        const CircleAvatar(),
-                        const Text('Dream, +8 more'),
-                        const Spacer(),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 12),
-                          decoration:
-                              const BoxDecoration(color: Colors.lightGreen),
-                          child: const Center(
-                            child: Text(
-                              'Join Event',
-                              style: TextStyle(color: Colors.white),
+                        const Expanded(
+                            flex: 2,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 80,
+                                  child: Stack(
+                                    children: [
+                                      Positioned(child: CircleAvatar()),
+                                      Positioned(
+                                        left: 15,
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.red,
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 30,
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.green,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Text('Dream, +8 more'),
+                              ],
+                            )),
+                        // const Spacer(),
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 12),
+                            decoration:
+                                const BoxDecoration(color: Colors.lightGreen),
+                            child: const Center(
+                              child: Text(
+                                'Join Event',
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
                           ),
                         ),
@@ -155,17 +178,88 @@ class HikingGuideApp extends StatelessWidget {
                 ],
               ),
               Expanded(
-                  child: ListView.builder(
-                itemCount: 10,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 320,
-                    margin: const EdgeInsets.only(right: 8),
-                    decoration: const BoxDecoration(color: Colors.blueAccent),
-                  );
-                },
-              ))
+                child: ListView.builder(
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 320,
+                      margin: const EdgeInsets.only(right: 8),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                      image: NetworkImage(
+                                        'https://images.unsplash.com/photo-1572598973323-eeef47c14431?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 4),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(23),
+                                        color: Colors.white),
+                                    child: const Row(
+                                      children: [
+                                        Icon(Icons.workspace_premium),
+                                        Text('Hard'),
+                                      ],
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  const CircleAvatar(
+                                    radius: 18,
+                                    backgroundColor: Colors.white,
+                                    child: Icon(Icons.download),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Row(
+                            children: [
+                              Text('Mount via Tretes'),
+                              Spacer(),
+                              Icon(Icons.star),
+                              Text('4.9 (120)'),
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Icon(Icons.golf_course),
+                              Text('East Java, Indonesia')
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              Icon(
+                                Icons.timer,
+                                size: 16,
+                              ),
+                              Text(
+                                '4h45m',
+                                style: TextStyle(),
+                              ),
+                              Icon(Icons.route),
+                              Text('16.5km'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ),
