@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class LoginWidget extends StatelessWidget {
   final String text;
+  final String image;
   const LoginWidget({
     super.key,
-    required this.text,
+    required this.text, required this.image,
   });
 
   @override
@@ -15,8 +16,17 @@ class LoginWidget extends StatelessWidget {
           border: Border.all(color: Colors.red[200]!),
           borderRadius: BorderRadius.circular(24)),
       child: Center(
-        child: Text(
-          text,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              image,
+              width: 30,
+            ),
+            Text(
+              text,
+            ),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Hiking_Guide/views/hiking_detail_page.dart';
 import 'package:gap/gap.dart';
 
 class HikingGuideApp extends StatelessWidget {
@@ -182,76 +183,84 @@ class HikingGuideApp extends StatelessWidget {
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 320,
-                      margin: const EdgeInsets.only(right: 8),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding: const EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                  image: const DecorationImage(
-                                      image: NetworkImage(
-                                        'https://images.unsplash.com/photo-1572598973323-eeef47c14431?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const HikingDetailPage(),
+                        ));
+                      },
+                      child: Container(
+                        width: 320,
+                        margin: const EdgeInsets.only(right: 8),
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                    image: const DecorationImage(
+                                        image: NetworkImage(
+                                          'https://images.unsplash.com/photo-1572598973323-eeef47c14431?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+                                        ),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(12)),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(23),
+                                          color: Colors.white),
+                                      child: const Row(
+                                        children: [
+                                          Icon(Icons.workspace_premium),
+                                          Text('Hard'),
+                                        ],
                                       ),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 4),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(23),
-                                        color: Colors.white),
-                                    child: const Row(
-                                      children: [
-                                        Icon(Icons.workspace_premium),
-                                        Text('Hard'),
-                                      ],
                                     ),
-                                  ),
-                                  const Spacer(),
-                                  const CircleAvatar(
-                                    radius: 18,
-                                    backgroundColor: Colors.white,
-                                    child: Icon(Icons.download),
-                                  ),
-                                ],
+                                    const Spacer(),
+                                    const CircleAvatar(
+                                      radius: 18,
+                                      backgroundColor: Colors.white,
+                                      child: Icon(Icons.download),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          const Row(
-                            children: [
-                              Text('Mount via Tretes'),
-                              Spacer(),
-                              Icon(Icons.star),
-                              Text('4.9 (120)'),
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Icon(Icons.golf_course),
-                              Text('East Java, Indonesia')
-                            ],
-                          ),
-                          const Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                size: 16,
-                              ),
-                              Text(
-                                '4h45m',
-                                style: TextStyle(),
-                              ),
-                              Icon(Icons.route),
-                              Text('16.5km'),
-                            ],
-                          ),
-                        ],
+                            const Row(
+                              children: [
+                                Text('Mount via Tretes'),
+                                Spacer(),
+                                Icon(Icons.star),
+                                Text('4.9 (120)'),
+                              ],
+                            ),
+                            const Row(
+                              children: [
+                                Icon(Icons.golf_course),
+                                Text('East Java, Indonesia')
+                              ],
+                            ),
+                            const Row(
+                              children: [
+                                Icon(
+                                  Icons.timer,
+                                  size: 16,
+                                ),
+                                Text(
+                                  '4h45m',
+                                  style: TextStyle(),
+                                ),
+                                Icon(Icons.route),
+                                Text('16.5km'),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

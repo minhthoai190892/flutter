@@ -49,12 +49,29 @@ class HikingLoginPage extends StatelessWidget {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => const HikingGuideApp(),
                             )),
-                        child: const LoginWidget(text: 'Sign in with Google')),
+                        child: const LoginWidget(
+                          text: 'Sign in with Google',
+                          image:
+                              'https://img.icons8.com/?size=100&id=V5cGWnc9R4xj&format=png&color=000000',
+                        )),
                     const Gap(8),
-                    const LoginWidget(text: 'Sign in with Apple'),
+                    const LoginWidget(
+                      text: 'Sign in with Apple',
+                      image:
+                          'https://img.icons8.com/?size=100&id=30840&format=png&color=000000',
+                    ),
                     const Gap(16),
 
-                    const Text("Don't you have an account? Register"),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Don't you have an account?"),
+                        Text(
+                          ' Register',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
                     // Text.rich(
                     //   TextSpan(
                     //     children: [
