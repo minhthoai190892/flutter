@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gap/gap.dart';
 
 class HikingDetailPage extends StatefulWidget {
   const HikingDetailPage({super.key});
@@ -42,29 +43,115 @@ class _HikingDetailPageState extends State<HikingDetailPage> {
               ),
             ),
           ),
+          const Gap(24),
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Mount via Treies'),
-                  const Row(
-                    children: [
-                      Icon(Icons.golf_course),
-                      Text('VN'),
-                    ],
-                  ),
-                  Container(
-                    height: 32,
-                    decoration: BoxDecoration(color: Colors.grey[200]),
-                  ),
-                  const Text('Description'),
-                  const Text(
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae exercitationem facilis sit, odio unde reprehenderit libero animi cum labore assumenda, perspiciatis culpa. Illum itaque reiciendis recusandae repellat?',
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Mount via Treies'),
+                    const Row(
+                      children: [
+                        Icon(Icons.golf_course),
+                        Text('VN'),
+                      ],
+                    ),
+                    Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [Text('3.1km'), Text('Length')],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [Text('3.1km'), Text('Length')],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [Text('3.1km'), Text('Length')],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Gap(12),
+                    const Text(
+                      'Description',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    const Gap(12),
+                    const Text(
+                      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae exercitationem facilis sit, odio unde reprehenderit libero animi cum labore assumenda, perspiciatis culpa. Illum itaque reiciendis recusandae repellat?',
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const Gap(12),
+                    const Text(
+                      'Weather Prediction',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    const Text('Thur 11 April 2015'),
+                    const Gap(20),
+                    Row(
+                      children: [
+                        Image.network(
+                            'https://img.icons8.com/?size=100&id=15343&format=png&color=000000'),
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '20°C',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 24),
+                              ),
+                              Text('Thunderstorm'),
+                            ],
+                          ),
+                        ),
+                        const Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.water_drop_outlined),
+                                Text('94%')
+                              ],
+                            ),
+                            Gap(16),
+                            Row(
+                              children: [
+                                Icon(Icons.water_drop_outlined),
+                                Text('94%')
+                              ],
+                            ),
+                            Gap(16),
+                            Row(
+                              children: [
+                                Icon(Icons.water_drop_outlined),
+                                Text('94%')
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,4 +1,4 @@
-git checkout -b Hiking_Guide-part-5
+git checkout -b Hiking_Guide-part-6
 git add .
-git commit -m "Hiking_Guide-part-5"
-git push -u origin Hiking_Guide-part-5
+git commit -m "Hiking_Guide-part-6"
+git push -u origin Hiking_Guide-part-6
