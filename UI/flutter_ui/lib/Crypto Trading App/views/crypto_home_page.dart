@@ -9,6 +9,13 @@ class CryptoHomePage extends StatefulWidget {
 }
 
 class _CryptoHomePageState extends State<CryptoHomePage> {
+  List<String> tabs = [
+    'All',
+    'Green',
+    'Red',
+    'Orange',
+  ];
+  var pageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,18 +24,13 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Row(
                 children: [
                   Expanded(
                     child: Stack(
                       children: [
-                        Positioned(
-                            child: CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          radius: 26,
-                        )),
                         Positioned(
                           left: 40,
                           child: CircleAvatar(
@@ -37,6 +39,11 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
                             child: Icon(Icons.add),
                           ),
                         ),
+                        Positioned(
+                            child: CircleAvatar(
+                          backgroundColor: Colors.grey,
+                          radius: 26,
+                        )),
                       ],
                     ),
                   ),
@@ -47,36 +54,128 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
                   ),
                 ],
               ),
-              const Text('List of quites'),
+              const Text(
+                'List of quites',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               SizedBox(
                 height: 32,
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: tabs.length,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Container(),
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        pageIndex = index;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color:
+                              index == pageIndex ? Colors.black : Colors.white,
+                          borderRadius: BorderRadius.circular(12)),
+                      margin: const EdgeInsets.only(right: 16),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Center(
+                            child: Text(
+                          tabs[index],
+                          style: TextStyle(
+                            color: index == pageIndex
+                                ? Colors.white
+                                : Colors.black,
+                            fontSize: 16,
+                          ),
+                        )),
+                      ),
+                    ),
+                  ),
                 ),
               ),
+              const Gap(16),
               Expanded(
-                  child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Indexes'),
-                    Container(
-                      height: 64,
-                      decoration: const BoxDecoration(color: Colors.white),
-                    ),
-                    const Gap(12),
-                    Container(
-                      height: 64,
-                      decoration: const BoxDecoration(color: Colors.white),
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Indexes',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const ContainerWidget(),
+                      const ContainerWidget(),
+                      const Gap(12),
+                      const Text(
+                        'Stocks',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      ...List.generate(
+                        30,
+                        (index) => const ContainerWidget(),
+                      ),
+                    ],
+                  ),
                 ),
-              ))
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ContainerWidget extends StatelessWidget {
+  const ContainerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.only(bottom: 8),
+      height: 72,
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Row(
+        children: [
+          CircleAvatar(
+            radius: 38,
+          ),
+          Expanded(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'data',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '222.222.22',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Row(
+                // mainAxisAlignment:
+                //     MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Unkown bank'),
+                  Spacer(),
+                  Text('-33.72'),
+                  Gap(6),
+                  Text('-1.72%'),
+                ],
+              ),
+            ],
+          ))
+        ],
       ),
     );
   }
