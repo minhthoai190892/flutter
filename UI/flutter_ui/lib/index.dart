@@ -4,3 +4,5 @@ export 'Finance_Management/view/finance_home_page.dart';
 export 'Travel_App/view/travel_main_page.dart';
 // https://youtu.be/Bum_NlhO2XI?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=210
 export 'Hiking_Guide/views/hiking_guide_app.dart';
+// https://youtu.be/Im93Ds-bifo?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=54
+export 'Crypto Trading App/views/crypto_home_page.dart';
