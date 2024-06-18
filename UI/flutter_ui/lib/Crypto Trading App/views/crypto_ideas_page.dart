@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class CryptoHomePage extends StatefulWidget {
-  const CryptoHomePage({super.key});
+class CryptoIdeasPage extends StatefulWidget {
+  const CryptoIdeasPage({super.key});
 
   @override
-  State<CryptoHomePage> createState() => _CryptoHomePageState();
+  State<CryptoIdeasPage> createState() => _CryptoIdeasPageState();
 }
 
-class _CryptoHomePageState extends State<CryptoHomePage> {
+class _CryptoIdeasPageState extends State<CryptoIdeasPage> {
   List<String> tabs = [
     'All',
-    'Green',
-    'Red',
-    'Orange',
+    'Subcription',
+    'Editor choices',
+    'Subcription',
   ];
   var pageIndex = 0;
   @override
@@ -22,9 +22,8 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
       backgroundColor: Colors.green[50],
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Row(
                 children: [
@@ -55,14 +54,13 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
                 ],
               ),
               const Text(
-                'List of quites',
+                'Ideas',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const Gap(16),
-             
               SizedBox(
                 height: 32,
                 child: ListView.builder(
@@ -99,87 +97,43 @@ class _CryptoHomePageState extends State<CryptoHomePage> {
               ),
               const Gap(16),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Indexes',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                child: IndexedStack(
+                  index: pageIndex,
+                  children: [
+                    Container(
+                      child: const Center(
+                        child: Text('All'),
                       ),
-                      const Gap(12),
-                      const ContainerWidget(),
-                      const ContainerWidget(),
-                      const Gap(12),
-                      const Text(
-                        'Stocks',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    ListView.builder(
+                      itemCount: 4,
+                      itemBuilder: (context, index) => Container(
+                        margin: const EdgeInsets.only(bottom: 12),
+                        height: 320,
+                        child: Card(
+                          color: Colors.white,
+                          surfaceTintColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                        ),
                       ),
-                      const Gap(12),
-                      ...List.generate(
-                        30,
-                        (index) => const ContainerWidget(),
+                    ),
+                    Container(
+                      child: const Center(
+                        child: Text('All2 '),
                       ),
-                    ],
-                  ),
+                    ),
+                    Container(
+                      child: const Center(
+                        child: Text('All 3'),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.only(bottom: 8),
-      height: 72,
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Row(
-        children: [
-          CircleAvatar(
-            radius: 38,
-          ),
-          Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'data',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '222.222.22',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                // mainAxisAlignment:
-                //     MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Unkown bank'),
-                  Spacer(),
-                  Text('-33.72'),
-                  Gap(6),
-                  Text('-1.72%'),
-                ],
-              ),
-            ],
-          ))
-        ],
       ),
     );
   }

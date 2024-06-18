@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Crypto%20Trading%20App/views/crypto_ideas_page.dart';
 import 'package:flutter_ui/Hiking_Guide/views/hiking_login_page.dart';
 import 'package:flutter_ui/index.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           // fontFamily: GoogleFonts.onest().fontFamily 
           ),
-      home: const CryptoHomePage(),
+      home: const CryptoIdeasPage(),
     );
   }
 }
