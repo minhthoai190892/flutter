@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class CryptoIdeasPage extends StatefulWidget {
@@ -114,7 +115,116 @@ class _CryptoIdeasPageState extends State<CryptoIdeasPage> {
                           color: Colors.white,
                           surfaceTintColor: Colors.white,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16)),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    const CircleAvatar(
+                                      radius: 24,
+                                    ),
+                                    const Gap(4),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              const Text(
+                                                'data',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16),
+                                              ),
+                                              const Gap(4),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 12,
+                                                        vertical: 4),
+                                                decoration: BoxDecoration(
+                                                    color: Colors.orange[200],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            32)),
+                                                child: const Text(
+                                                  'Premium',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.white),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          const Text('5h ago'),
+                                        ],
+                                      ),
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.more_horiz))
+                                  ],
+                                ),
+                                const Gap(8),
+                                Expanded(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                                const Text(
+                                  'data',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 12, vertical: 4),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          border: Border.all(
+                                              color: Colors.grey[200]!)),
+                                      child: const Row(
+                                        children: [
+                                          Icon(Icons.favorite_outline),
+                                          Text('12k'),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 12, vertical: 4),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          border: Border.all(
+                                              color: Colors.grey[200]!)),
+                                      child: const Row(
+                                        children: [
+                                          Icon(Icons.chat_bubble_outline),
+                                          Text('12k'),
+                                        ],
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    const Icon(Icons.visibility),
+                                    const Text('555')
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
