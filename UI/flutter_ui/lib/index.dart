@@ -6,3 +6,4 @@ export 'Travel_App/view/travel_main_page.dart';
 export 'Hiking_Guide/views/hiking_guide_app.dart';
 // https://youtu.be/Im93Ds-bifo?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=54
 export 'Crypto Trading App/views/crypto_home_page.dart';
+// https://youtu.be/g3mMrxjz8E8?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=1

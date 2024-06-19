@@ -1,6 +1,6 @@
-git checkout -b Crypto_Trading_App-part-4
+git checkout -b Sneakers-App-part-4
 git add .
-git commit -m "Crypto_Trading_App-part-4"
-git push -u origin Crypto_Trading_App-part-4
+git commit -m "Sneakers-App-part-4"
+git push -u origin Sneakers-App-part-4
 
 
