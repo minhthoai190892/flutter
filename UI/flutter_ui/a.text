@@ -1,6 +1,6 @@
-git checkout -b Sneakers-App-part-2
+git checkout -b Sneakers-App-part-3
 git add .
-git commit -m "Sneakers-App-part-2"
-git push -u origin Sneakers-App-part-2
+git commit -m "Sneakers-App-part-3"
+git push -u origin Sneakers-App-part-3
 
 

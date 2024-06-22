@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Sneakers%20App/views/sneaker_details_page.dart';
 import 'package:gap/gap.dart';
 
 class SneakerHomePage extends StatelessWidget {
@@ -143,16 +144,6 @@ class SneakerHomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // const Gap(12),
-                      // Expanded(
-                      //     child: Container(
-                      //   decoration: const BoxDecoration(color: Colors.green),
-                      // )),
-                      // const Gap(12),
-                      // Expanded(
-                      //     child: Container(
-                      //   decoration: const BoxDecoration(color: Colors.green),
-                      // )),
                     ],
                   ),
                 ),
@@ -174,10 +165,51 @@ class SneakerHomePage extends StatelessWidget {
                   'Value for money ',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                const Gap(16),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SneakerDetailsPage(),
+                      )),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text('111\$'),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.favorite_outline))
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              'Gel-123645',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            Container(
+                              decoration:
+                                  const BoxDecoration(color: Colors.black),
+                              child: const Icon(
+                                Icons.shopping_bag_outlined,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
