@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
@@ -13,35 +14,78 @@ class SneakerDetailsPage extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               height: 400,
-              color: Colors.blue,
+              child: PageView(
+                children: [
+                  Container(
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    color: Colors.yellow,
+                  ),
+                ],
+              ),
             ),
             const Gap(12),
-            const Row(
-              children: [],
+            Row(
+              children: [
+                const Expanded(
+                  child: Text(
+                      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae e'),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[200]!)),
+                  child: const Icon(Icons.favorite_border_outlined),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[200]!)),
+                  child: const Icon(Icons.upload),
+                ),
+              ],
             ),
-            const Row(
-              children: [],
+            Row(
+              children: [
+                ...List.generate(
+                  4,
+                  (index) => const Icon(Icons.eco),
+                ),
+                const Icon(Icons.eco_outlined),
+                const Text('205 views')
+              ],
             ),
             const Text('111\$'),
             const Divider(),
             const Row(
               children: [
                 Text('Size'),
+                Spacer(),
+                Text('US11'),
+                Icon(Icons.height_outlined)
               ],
             ),
             const Divider(),
             const Row(
               children: [
                 Text('Colour'),
+                Spacer(),
+                Text('Light Grey'),
+                Icon(Icons.height_outlined)
               ],
             ),
             const Divider(),
-            const Row(
+            Row(
               children: [
-                Text('Quantity'),
+                const Text('Quantity'),
+                const Spacer(),
+                IconButton(
+                    onPressed: () {}, icon: const Icon(Icons.remove_outlined)),
+                const Text('3'),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
               ],
             ),
             const Gap(8),
