@@ -1,6 +1,4 @@
-git checkout -b Sneakers-App-part-4
+git checkout -b Manga_App-App-part-1
 git add .
-git commit -m "Sneakers-App-part-4"
-git push -u origin Sneakers-App-part-4
-
-
+git commit -m "Manga_App-App-part-1"
+git push -u origin Manga_App-App-part-1
