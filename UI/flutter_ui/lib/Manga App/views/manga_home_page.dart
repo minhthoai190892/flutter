@@ -2,7 +2,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ui/Manga%20App/views/manga_book_mark_widget.dart';
+import 'package:flutter_ui/Manga%20App/views/manga_discover_widget.dart';
+import 'package:flutter_ui/Manga%20App/views/manga_person_widget.dart';
 import 'package:gap/gap.dart';
+
+import '../widgets/text_widget.dart';
+import '../widgets/title_and_more_widget.dart';
+import 'manga_home_widget.dart';
 
 class MangaHomePage extends StatefulWidget {
   const MangaHomePage({super.key});
@@ -12,6 +19,7 @@ class MangaHomePage extends StatefulWidget {
 }
 
 class _MangaHomePageState extends State<MangaHomePage> {
+  var pageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,123 +34,22 @@ class _MangaHomePageState extends State<MangaHomePage> {
               onPressed: () {}, icon: const Icon(Icons.shopping_bag_outlined))
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                // margin: const EdgeInsets.only(left: 10),
-                height: 210,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 140,
-                      decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                    const Gap(12),
-                    Expanded(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const TextWidget(
-                          text: 'data',
-                          size: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        const Gap(10),
-                        const TextWidget(
-                          text: 'data',
-                        ),
-                        const Gap(10),
-                        const TextWidget(
-                          text: 'data',
-                        ),
-                        const Gap(20),
-                        const Row(
-                          children: [
-                            TextWidget(
-                              text: '78%',
-                              color: Colors.orange,
-                            ),
-                            Gap(8),
-                            TextWidget(
-                              text: '20 min left',
-                            ),
-                          ],
-                        ),
-                        const Gap(10),
-                        const LinearProgressIndicator(
-                          color: Colors.orangeAccent,
-                          value: 0.7,
-                        ),
-                        const Gap(10),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          decoration: BoxDecoration(
-                              color: Colors.amberAccent,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: const Center(
-                            child: TextWidget(
-                              text: 'Continue loading...',
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ))
-                  ],
-                ),
-              ),
-              const Gap(10),
-              TitleAndMoreWidget(
-                text: 'Data',
-                // color: Colors.red,
-                fontWeight: FontWeight.bold,
-                size: 20,
-                callback: () {},
-              ),
-              SizedBox(
-                height: 240,
-                child: ListView.builder(
-                  itemCount: 5,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Container(
-                    width: 250,
-                    height: 100,
-                    margin: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(color: Colors.white),
-                    child: const Column(
-                      children: [],
-                    ),
-                  ),
-                ),
-              ),
-              TitleAndMoreWidget(
-                text: 'Data',
-                // color: Colors.red,
-                fontWeight: FontWeight.bold,
-                size: 20,
-                callback: () {},
-              ),
-              GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 10,
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12),
-                itemBuilder: (context, index) => const Placeholder(),
-              ),
-            ],
-          ),
-        ),
+      body: IndexedStack(
+        index: pageIndex,
+        children: const [
+          MangaHomeWidget(),
+          MangaDiscoverWidget(),
+          MangaDBookMarkWidget(),
+          MangaPersonWidget()
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+          onTap: (value) {
+            setState(() {
+              pageIndex = value;
+            });
+          },
+          currentIndex: pageIndex,
           backgroundColor: Colors.black,
           showSelectedLabels: false,
           showUnselectedLabels: false,
@@ -151,69 +58,12 @@ class _MangaHomePageState extends State<MangaHomePage> {
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.explore), label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark_border), label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline_outlined), label: ''),
           ]),
-    );
-  }
-}
-
-class TitleAndMoreWidget extends StatelessWidget {
-  final String text;
-  final VoidCallback callback;
-  final double size;
-  final Color color;
-  final FontWeight fontWeight;
-  const TitleAndMoreWidget({
-    super.key,
-    required this.text,
-    required this.callback,
-    this.size = 16,
-    this.color = Colors.white,
-    this.fontWeight = FontWeight.normal,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TextWidget(
-          text: text,
-          size: size,
-          color: color,
-          fontWeight: fontWeight,
-        ),
-        IconButton(
-            onPressed: callback,
-            icon: const Icon(
-              Icons.arrow_forward,
-              color: Colors.white,
-            ))
-      ],
-    );
-  }
-}
-
-class TextWidget extends StatelessWidget {
-  final String text;
-  final Color color;
-  final double size;
-  final FontWeight fontWeight;
-  const TextWidget({
-    super.key,
-    required this.text,
-    this.color = Colors.white,
-    this.size = 16,
-    this.fontWeight = FontWeight.normal,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(color: color, fontSize: size, fontWeight: fontWeight),
     );
   }
 }
