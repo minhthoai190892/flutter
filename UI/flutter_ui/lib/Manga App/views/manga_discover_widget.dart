@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/Manga%20App/views/manga_detail_page.dart';
 import 'package:flutter_ui/Manga%20App/widgets/text_widget.dart';
 import 'package:gap/gap.dart';
 
@@ -61,50 +62,57 @@ class _MangaDiscoverWidgetState extends State<MangaDiscoverWidget> {
             const Gap(16),
             Expanded(
               child: ListView.builder(
-                itemBuilder: (context, index) => Container(
-                  height: 180,
-                  margin: const EdgeInsets.only(bottom: 12),
-                  decoration: const BoxDecoration(color: Colors.blue),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 160,
-                        decoration: const BoxDecoration(
-                          color: Colors.amber,
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MangaDetailPage(),
+                      )),
+                  child: Container(
+                    height: 180,
+                    margin: const EdgeInsets.only(bottom: 12),
+                    decoration: const BoxDecoration(color: Colors.blue),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 160,
+                          decoration: const BoxDecoration(
+                            color: Colors.amber,
+                          ),
+                          child: const Placeholder(),
                         ),
-                        child: const Placeholder(),
-                      ),
-                      const Gap(16),
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                TextWidget(text: 'text'),
-                                Icon(
-                                  Icons.bookmark_outline,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
-                            Gap(8),
-                            TextWidget(text: 'text'),
-                            Gap(8),
-                            Row(
-                              children: [
-                                Icon(Icons.star),
-                                TextWidget(text: '5.0')
-                              ],
-                            ),
-                            Gap(15),
-                            TextWidget(
-                                text:
-                                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae exercitationem facilis sit, odio unde reprehenderit libero animi cum labore assumenda, perspiciatis culpa. Illum itaque reiciendis recusandae repellat?')
-                          ],
-                        ),
-                      )
-                    ],
+                        const Gap(16),
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  TextWidget(text: 'text'),
+                                  Icon(
+                                    Icons.bookmark_outline,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                              Gap(8),
+                              TextWidget(text: 'text'),
+                              Gap(8),
+                              Row(
+                                children: [
+                                  Icon(Icons.star),
+                                  TextWidget(text: '5.0')
+                                ],
+                              ),
+                              Gap(15),
+                              TextWidget(
+                                  text:
+                                      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam beatae exercitationem facilis sit, odio unde reprehenderit libero animi cum labore assumenda, perspiciatis culpa. Illum itaque reiciendis recusandae repellat?')
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
