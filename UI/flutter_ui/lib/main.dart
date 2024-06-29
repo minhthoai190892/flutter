@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         // fontFamily: GoogleFonts.onest().fontFamily
       ),
-      home: const MangaHomePage(),
+      home: const MeditationAudioApp(),
     );
   }
 }
