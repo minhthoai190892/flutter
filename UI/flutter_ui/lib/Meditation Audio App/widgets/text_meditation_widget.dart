@@ -5,14 +5,15 @@ class TextMeditationWidget extends StatelessWidget {
   final String text;
   final int? maxLines;
   final TextOverflow? textOverflow;
-  final double? size;
+  final double? fontSize;
   final FontWeight? fontWeight;
   const TextMeditationWidget({
     super.key,
     required this.text,
     this.maxLines,
     this.textOverflow,
-    this.size, this.fontWeight,
+    this.fontSize,
+    this.fontWeight,
   });
 
   @override
@@ -21,7 +22,7 @@ class TextMeditationWidget extends StatelessWidget {
       text,
       maxLines: maxLines,
       overflow: textOverflow,
-      style: TextStyle(fontSize: size, fontWeight: fontWeight),
+      style: TextStyle(fontSize: fontSize, fontWeight: fontWeight),
     );
   }
 }
