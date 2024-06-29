@@ -123,15 +123,15 @@ class MeditationAudioApp extends StatelessWidget {
                                     left: 10,
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 5, horizontal: 20),
+                                          vertical: 5, horizontal: 7),
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(20)),
                                       child: const Row(
                                         children: [
-                                          Icon(Icons.add_location),
-                                          TextMeditationWidget(text: '7M')
+                                          Icon(Icons.military_tech_outlined),
+                                          TextMeditationWidget(text: '7 MIN')
                                         ],
                                       ),
                                     ))
@@ -178,8 +178,45 @@ class MeditationAudioApp extends StatelessWidget {
                     ),
                     ListView.separated(
                         shrinkWrap: true,
-                        itemBuilder: (context, index) => const Row(
-                              children: [],
+                        itemBuilder: (context, index) => Row(
+                              children: [
+                                Container(
+                                  width: 72,
+                                  height: 72,
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[500],
+                                      borderRadius: BorderRadius.circular(8)),
+                                ),
+                                const Gap(10),
+                                const Expanded(
+                                    child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextMeditationWidget(
+                                      text: 'Lorem ipsum dolor sit,',
+                                    ),
+                                    TextMeditationWidget(
+                                      text:
+                                          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur est laboriosam',
+                                      textOverflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
+                                    ),
+                                  ],
+                                )),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 7),
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[100],
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: const Row(
+                                    children: [
+                                      Icon(Icons.play_circle_fill_outlined),
+                                      TextMeditationWidget(text: '7 MIN')
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
                         separatorBuilder: (context, index) => const Divider(),
                         itemCount: 10),
