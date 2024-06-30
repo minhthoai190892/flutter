@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../views/manga_home_page.dart';
 import 'text_widget.dart';
 
 class TitleAndMoreWidget extends StatelessWidget {

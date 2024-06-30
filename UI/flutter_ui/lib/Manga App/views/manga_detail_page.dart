@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ui/Manga%20App/widgets/text_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:readmore/readmore.dart';

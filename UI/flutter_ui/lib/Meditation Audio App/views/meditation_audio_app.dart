@@ -1,12 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ui/Meditation%20Audio%20App/views/meditation_course.dart';
 import 'package:flutter_ui/Meditation%20Audio%20App/views/meditation_discovery.dart';
 import 'package:flutter_ui/Meditation%20Audio%20App/views/meditation_sleep.dart';
-import 'package:flutter_ui/Meditation%20Audio%20App/widgets/text_meditation_widget.dart';
-import 'package:gap/gap.dart';
 
 import '../widgets/meditation_audio_app_widget.dart';
 

@@ -1,14 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ui/Manga%20App/views/manga_book_mark_widget.dart';
 import 'package:flutter_ui/Manga%20App/views/manga_discover_widget.dart';
 import 'package:flutter_ui/Manga%20App/views/manga_person_widget.dart';
-import 'package:gap/gap.dart';
 
-import '../widgets/text_widget.dart';
-import '../widgets/title_and_more_widget.dart';
 import 'manga_home_widget.dart';
 
 class MangaHomePage extends StatefulWidget {
