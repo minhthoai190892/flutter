@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ui/Health%20App/views/health_heart_page.dart';
 import 'package:gap/gap.dart';
 
 class HealthApp extends StatelessWidget {
@@ -147,6 +148,15 @@ class HealthApp extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.green[300],
         unselectedItemColor: Colors.grey,
+        onTap: (value) {
+          if (value == 3) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HealthHeartPage(),
+                ));
+          }
+        },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
