@@ -56,14 +56,86 @@ class _HealthHeartPageState extends State<HealthHeartPage> {
                   children: [
                     Expanded(
                         child: Container(
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey[300]!)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircleAvatar(
+                            radius: 30,
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '98',
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.bold),
+                              ),
+                              const Gap(10),
+                              Text(
+                                'bpm',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[500]),
+                              ),
+                            ],
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_right_alt))
+                        ],
+                      ),
                     )),
                     const Gap(16),
                     Expanded(
                         child: Container(
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey[300]!)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircleAvatar(
+                            radius: 30,
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '98',
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.bold),
+                              ),
+                              const Gap(10),
+                              Text(
+                                'bpm',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[500]),
+                              ),
+                            ],
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_right_alt))
+                        ],
+                      ),
                     )),
                   ],
                 )),
@@ -73,14 +145,86 @@ class _HealthHeartPageState extends State<HealthHeartPage> {
                   children: [
                     Expanded(
                         child: Container(
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey[300]!)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircleAvatar(
+                            radius: 30,
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '98',
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.bold),
+                              ),
+                              const Gap(10),
+                              Text(
+                                'bpm',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[500]),
+                              ),
+                            ],
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_right_alt))
+                        ],
+                      ),
                     )),
                     const Gap(16),
                     Expanded(
                         child: Container(
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey[300]!)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CircleAvatar(
+                            radius: 30,
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '98',
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.bold),
+                              ),
+                              const Gap(10),
+                              Text(
+                                'bpm',
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.grey[500]),
+                              ),
+                            ],
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'data',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.arrow_right_alt))
+                        ],
+                      ),
                     )),
                   ],
                 )),
