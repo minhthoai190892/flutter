@@ -55,7 +55,7 @@ class _EBookAppState extends State<EBookApp> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20)),
-                  height: 180,
+                  // height: 180,
                   child: Column(
                     children: [
                       Row(
@@ -66,6 +66,7 @@ class _EBookAppState extends State<EBookApp> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
                             decoration: BoxDecoration(
                                 color: Colors.grey[200],
                                 borderRadius: BorderRadius.circular(10)),
@@ -81,7 +82,7 @@ class _EBookAppState extends State<EBookApp> {
                       const Divider(),
                       const Gap(10),
                       SizedBox(
-                        height: 100,
+                        height: 80,
                         child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
@@ -135,7 +136,7 @@ class _EBookAppState extends State<EBookApp> {
                 // top trending
                 Container(
                   padding: const EdgeInsets.all(15),
-                  height: 250,
+                  height: 350,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
@@ -147,6 +148,7 @@ class _EBookAppState extends State<EBookApp> {
                         children: [
                           const Text('Top Trending'),
                           Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
                               borderRadius: BorderRadius.circular(10),
@@ -157,23 +159,176 @@ class _EBookAppState extends State<EBookApp> {
                                 Icon(Icons.arrow_forward_ios)
                               ],
                             ),
-                          )
+                          ),
                         ],
+                      ),
+                      const Gap(15),
+                      Expanded(
+                        child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => Container(
+                                  padding: const EdgeInsets.all(10),
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                      border:
+                                          Border.all(color: Colors.grey[300]!),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Stack(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color: Colors.blue[50]),
+                                            ),
+                                            const Positioned(
+                                                top: 10,
+                                                right: 10,
+                                                child: Icon(
+                                                  Icons.favorite,
+                                                  color: Colors.amber,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text('data'),
+                                          Spacer(),
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                          ),
+                                          Text('4.5'),
+                                        ],
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text(
+                                            'Apoplo',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            '\$300.00',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                            itemCount: 10),
                       )
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 150,
-                  child: Placeholder(),
-                ),
-                const SizedBox(
-                  height: 150,
-                  child: Placeholder(),
-                ),
-                const SizedBox(
-                  height: 150,
-                  child: Placeholder(),
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  height: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text('Top Trending'),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Row(
+                              children: [
+                                Text('See All'),
+                                Icon(Icons.arrow_forward_ios)
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Gap(15),
+                      Expanded(
+                        child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => Container(
+                                  width: 200,
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      border:
+                                          Border.all(color: Colors.grey[300]!),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Stack(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color: Colors.blue[50]),
+                                            ),
+                                            const Positioned(
+                                                top: 10,
+                                                right: 10,
+                                                child: Icon(
+                                                  Icons.favorite,
+                                                  color: Colors.amber,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text('data'),
+                                          Spacer(),
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                          ),
+                                          Text('4.5'),
+                                        ],
+                                      ),
+                                      const Row(
+                                        children: [
+                                          Text(
+                                            'Apoplo',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            '\$300.00',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                            itemCount: 10),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

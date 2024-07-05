@@ -1,4 +1,4 @@
-git checkout -b e-book_App-part-1
+git checkout -b e-book_App-part-2
 git add .
-git commit -m "e-book_App-part-1"
-git push -u origin e-book_App-part-1
+git commit -m "e-book_App-part-2"
+git push -u origin e-book_App-part-2
