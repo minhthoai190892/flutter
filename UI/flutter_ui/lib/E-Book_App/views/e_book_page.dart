@@ -107,7 +107,13 @@ class _EBookPageState extends State<EBookPage> {
                         backgroundColor: Colors.amberAccent[200]),
                     onPressed: () {},
                     child: const Center(
-                      child: Text('data'),
+                      child: Text(
+                        'Next',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ))
               ],
             ))
