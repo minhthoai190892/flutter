@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui/E-Book_App/views/e_book_app.dart';
 import 'package:flutter_ui/E-Book_App/views/e_book_detail.dart';
 import 'package:flutter_ui/E-Book_App/views/e_book_page.dart';
+import 'package:flutter_ui/Music_App/views/music_app.dart';
 import 'package:flutter_ui/index.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         // fontFamily: GoogleFonts.onest().fontFamily
       ),
-      home: const EBookDetail(),
+      home: const MusicApp(),
     );
   }
 }

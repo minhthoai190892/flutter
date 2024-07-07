@@ -16,4 +16,5 @@ export 'Meditation Audio App/views/meditation_audio_app.dart';
 export 'Health App/views/health_app.dart';
 // https://youtu.be/FEt9pyYTsp0?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=3
 
-
+// https://youtu.be/3sy_8xB8Iok?list=PLnz10ftgq9R9dGa0eqzR4FcNekwi_5XrZ&t=158
+export 'Music_App/views/music_app.dart';
