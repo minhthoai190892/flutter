@@ -100,10 +100,8 @@ class _CryptoIdeasPageState extends State<CryptoIdeasPage> {
                 child: IndexedStack(
                   index: pageIndex,
                   children: [
-                    Container(
-                      child: const Center(
-                        child: Text('All'),
-                      ),
+                    const Center(
+                      child: Text('All'),
                     ),
                     ListView.builder(
                       itemCount: 4,
@@ -227,15 +225,11 @@ class _CryptoIdeasPageState extends State<CryptoIdeasPage> {
                         ),
                       ),
                     ),
-                    Container(
-                      child: const Center(
-                        child: Text('All2 '),
-                      ),
+                    const Center(
+                      child: Text('All2 '),
                     ),
-                    Container(
-                      child: const Center(
-                        child: Text('All 3'),
-                      ),
+                    const Center(
+                      child: Text('All 3'),
                     ),
                   ],
                 ),

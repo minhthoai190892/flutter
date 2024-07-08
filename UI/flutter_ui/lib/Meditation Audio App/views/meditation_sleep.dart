@@ -9,7 +9,6 @@ class MeditationSleep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    print("${size.width} - ${size.height}");
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,13 +160,11 @@ class MeditationSleep extends StatelessWidget {
                                   ),
                                 ],
                               )),
-                              Container(
-                                child: const Row(
-                                  children: [
-                                    Icon(Icons.timelapse),
-                                    TextMeditationWidget(text: '7 MIN')
-                                  ],
-                                ),
+                              const Row(
+                                children: [
+                                  Icon(Icons.timelapse),
+                                  TextMeditationWidget(text: '7 MIN')
+                                ],
                               )
                             ],
                           ),

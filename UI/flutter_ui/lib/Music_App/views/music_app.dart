@@ -1,11 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
-
-import 'package:flutter_ui/Crypto%20Trading%20App/views/crypto_home_page.dart';
 
 class MusicApp extends StatefulWidget {
   const MusicApp({super.key});
@@ -85,7 +80,9 @@ class _MusicAppState extends State<MusicApp> {
                         child: Placeholder(),
                       ),
                       Row(
-                        children: [Text('Playlist')],
+                        children: [
+                          Text('Playlist',sty),
+                        ],
                       ),
                       SizedBox(
                         height: 280,
@@ -132,6 +129,7 @@ class _MusicAppState extends State<MusicApp> {
   }
 }
 
+// ignore: must_be_immutable
 class ContainerMusicAppWidget extends StatelessWidget {
   final double? width;
   final double? height;

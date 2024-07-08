@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ui/Health%20App/views/health_heart_page.dart';
 import 'package:gap/gap.dart';
 
@@ -70,12 +69,8 @@ class HealthApp extends StatelessWidget {
                         ]),
                     Expanded(
                         child: TabBarView(children: [
-                      Container(
-                        child: const Text('data'),
-                      ),
-                      Container(
-                        child: const Text('data'),
-                      ),
+                      const Text('data'),
+                      const Text('data'),
                       SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
