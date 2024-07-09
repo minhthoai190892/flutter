@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class MusicApp extends StatefulWidget {
@@ -72,31 +73,102 @@ class _MusicAppState extends State<MusicApp> {
             Expanded(
                 child: Stack(
               children: [
-                const Positioned.fill(
+                Positioned.fill(
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 63,
-                        child: Placeholder(),
+                      Container(
+                        margin: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(color: Colors.grey[200]),
+                        height: 82,
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Live ...'),
+                                const Gap(4),
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 24,
+                                      height: 24,
+                                      decoration: const BoxDecoration(
+                                          color: Colors.grey),
+                                    ),
+                                    const Gap(4),
+                                    const Text('The secret')
+                                  ],
+                                ),
+                              ],
+                            )),
+                            Expanded(
+                                child: Container(
+                              height: 36,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(4)),
+                            )),
+                            const Icon(Icons.arrow_forward_ios_outlined)
+                          ],
+                        ),
                       ),
-                      Row(
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              'Playlist',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.arrow_forward))
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 16),
+                        height: 280,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.grey[200]!)),
+                            margin: const EdgeInsets.only(right: 16),
+                            width: 200,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                    child: Container(
+                                  decoration:
+                                      const BoxDecoration(color: Colors.grey),
+                                )),
+                                const Text('data'),
+                                const Text('data'),
+                              ],
+                            ),
+                          ),
+                          itemCount: 10,
+                        ),
+                      ),
+                      const Row(
                         children: [
-                          Text('Playlist',sty),
+                          Text(
+                            'Playlist',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 280,
                         child: Placeholder(),
-                      ),
-                      Row(
-                        children: [Text('Playlist')],
-                      ),
-                      SizedBox(
-                        height: 280,
-                        child: Placeholder(),
-                      ),
-                      Row(
-                        children: [Text('Playlist')],
                       ),
                     ],
                   ),
