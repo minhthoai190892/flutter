@@ -20,13 +20,13 @@ extension HexColor on Color {
   /// Nếu bạn gọi hàm fromHex với đầu vào là "#FFAABB", chuỗi này sẽ được xử lý như sau:
   ///
   /// hexString.length là 7, do đó 'ff' sẽ được thêm vào buffer.
-  /// 
+  ///
   /// Ký tự # sẽ được loại bỏ, và "FFAABB" sẽ được ghép vào buffer.
-  /// 
+  ///
   /// buffer.toString() sẽ trở thành "ffAABB".
-  /// 
+  ///
   /// Cuối cùng, "ffAABB" sẽ được chuyển đổi thành một số nguyên dạng hexa, và từ đó một đối tượng Color sẽ được tạo ra với giá trị tương ứng.
-  /// 
+  ///
   /// =>rgb(255,170,187)
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
@@ -46,4 +46,32 @@ extension HexColor on Color {
       '${red.toRadixString(16).padLeft(2, '0')}'
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
+}
+
+/// Mở rộng lớp BuildContext
+///
+/// cho phép thêm các thuộc tính và phương thức mới vào BuildContext.
+extension AppContext on BuildContext {
+  /// tạo một getter "size" trả về kích của màng hình
+  ///
+  /// "this" đại diện cho "BuildContext"
+  Size get size => MediaQuery.sizeOf(this);
+
+  /// tạo một getter "width" trả về chiểu rộng của màng hình
+  double get width => size.width;
+
+  /// tạo một getter "height" trả về chiểu dài của màng hình
+  double get height => size.height;
+
+  Future push(Widget widget) async {
+    return Navigator.push(
+        this,
+        MaterialPageRoute(
+          builder: (context) => widget,
+        ));
+  }
+
+  void pop() async {
+    return Navigator.pop(this);
+  }
 }

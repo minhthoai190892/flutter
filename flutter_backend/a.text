@@ -1,4 +1,4 @@
-git checkout -b TAXI_APP-splash-1
+git checkout -b TAXI_APP-mobile_number_view
 git add .
-git commit -m "TAXI_APP-splash-1"
-git push -u origin TAXI_APP-splash-1
+git commit -m "TAXI_APP-mobile_number_view"
+git push -u origin TAXI_APP-mobile_number_view
