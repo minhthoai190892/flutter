@@ -2,6 +2,7 @@ import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_backend/common/color_extension.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
+import 'package:flutter_backend/view/login/otp_view.dart';
 import 'package:flutter_backend/view/login/welcom_view.dart';
 
 class MobileNumberView extends StatefulWidget {
@@ -123,7 +124,9 @@ class _MobileNumberViewState extends State<MobileNumberView> {
             ),
             RoundButtonWidget(
               title: 'CONTINUE',
-              onPressed: () {},
+              onPressed: () {
+                context.push(OTPView(number: 'number', code: 'code'));
+              },
             )
           ],
         ),
