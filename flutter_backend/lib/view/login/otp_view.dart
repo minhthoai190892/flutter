@@ -43,7 +43,7 @@ class _OTPViewState extends State<OTPView> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  '${widget.number} ${widget.number}',
+                  '${widget.code} ${widget.number}',
                   style: TextStyle(color: TColor.primaryText, fontSize: 16),
                 ),
                 const SizedBox(
@@ -62,28 +62,37 @@ class _OTPViewState extends State<OTPView> {
               numberOfFields: 6,
               borderColor: TColor.placeholder,
               focusedBorderColor: TColor.primary,
+              cursorColor: Colors.green,
               textStyle: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 16,
               ),
-              showFieldAsBox: false,
-              borderWidth: 4.0,
+              showFieldAsBox: true,
+              borderWidth: 1.0,
               onCodeChanged: (code) {},
               onSubmit: (verificationCode) {},
+            ),
+            const SizedBox(
+              height: 20,
             ),
             RoundButtonWidget(
               title: 'SUBMIT',
               onPressed: () {},
             ),
-            OtpTimerButton(
-                onPressed: () {},
-                text: const Text(
-                  'Resent OTP',
-                  style: TextStyle(fontSize: 20),
-                ),
-                buttonType: ButtonType.text_button,
-                backgroundColor: Colors.orange,
-                duration: 2),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OtpTimerButton(
+                    onPressed: () {},
+                    text: const Text(
+                      'Resent OTP ',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    buttonType: ButtonType.text_button,
+                    backgroundColor: Colors.orange,
+                    duration: 60),
+              ],
+            ),
           ],
         ),
       ),

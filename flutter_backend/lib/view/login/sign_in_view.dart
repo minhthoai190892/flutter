@@ -1,21 +1,23 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_backend/common/color_extension.dart';
+import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
 import 'package:flutter_backend/view/login/otp_view.dart';
 import 'package:flutter_backend/view/login/welcom_view.dart';
 
-class MobileNumberView extends StatefulWidget {
-  const MobileNumberView({super.key});
+class SignInView extends StatefulWidget {
+  const SignInView({super.key});
 
   @override
-  State<MobileNumberView> createState() => _MobileNumberViewState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _MobileNumberViewState extends State<MobileNumberView> {
+class _SignInViewState extends State<SignInView> {
   FlCountryCodePicker countryCodePicker = const FlCountryCodePicker();
   late CountryCode countryCode;
   TextEditingController txtMobile = TextEditingController();
+  TextEditingController txtPassword = TextEditingController();
   @override
   void initState() {
     // TODO: implement initState
@@ -37,7 +39,7 @@ class _MobileNumberViewState extends State<MobileNumberView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Enter mobile number',
+              'Sign In',
               style: TextStyle(
                   color: TColor.primaryText,
                   fontWeight: FontWeight.bold,
@@ -46,34 +48,9 @@ class _MobileNumberViewState extends State<MobileNumberView> {
             const SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'By continuing, I confirm that i have read & agree to the ',
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 11),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Terms & conditions',
-                  style: TextStyle(color: TColor.primaryText, fontSize: 11),
-                ),
-                Text(
-                  ' and ',
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 11),
-                ),
-                Text(
-                  'Privacy & privacy',
-                  style: TextStyle(color: TColor.primaryText, fontSize: 11),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 30,
+            Text(
+              'Mobile Number',
+              style: TextStyle(color: TColor.placeholder, fontSize: 16),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -118,15 +95,44 @@ class _MobileNumberViewState extends State<MobileNumberView> {
                 )
               ],
             ),
-            const Divider(),
             const SizedBox(
               height: 8,
             ),
+            const Divider(),
+            LineTextField(
+              title: 'Password',
+              hintText: '*********',
+              controller: txtPassword,
+              right: IconButton(
+                  onPressed: () {},
+                  icon: Image.network(
+                    'https://img.icons8.com/?size=100&id=3PEmEecIkSOo&format=png&color=000000',
+                    width: 15,
+                    height: 15,
+                  )),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const Divider(),
             RoundButtonWidget(
-              title: 'CONTINUE',
-              onPressed: () {
-                context.push(const OTPView(number: '0909090909', code: '+84'));
-              },
+              title: 'SIGN IN',
+              onPressed: () {},
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'FORGOT PASSWORD',
+                    style: TextStyle(
+                        color: TColor.primary,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14),
+                  ),
+                )
+              ],
             )
           ],
         ),
