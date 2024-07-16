@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_backend/common/color_extension.dart';
+import 'package:flutter_backend/view/login/sign_up_view.dart';
 import 'package:flutter_backend/view/login/splash_view.dart';
 
 void main() {

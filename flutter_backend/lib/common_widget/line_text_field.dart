@@ -26,22 +26,27 @@ class LineTextField extends StatelessWidget {
           title,
           style: TextStyle(color: TColor.placeholder, fontSize: 16),
         ),
-        TextField(
-          controller: controller,
-          keyboardType: keyboardType,
-          obscureText: obscureText ?? false,
-          decoration: InputDecoration(
-            hintText: hintText,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            suffixIcon: right,
-            hintStyle: TextStyle(
-              color: TColor.placeholder,
-              fontSize: 16,
+        SizedBox(
+          height: 30,
+          child: TextField(
+            controller: controller,
+            keyboardType: keyboardType,
+            obscureText: obscureText ?? false,
+            decoration: InputDecoration(
+              hintText: hintText,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              suffixIcon: right,
+              hintStyle: TextStyle(
+                color: TColor.placeholder,
+                fontSize: 16,
+              ),
             ),
           ),
         ),
-        const Divider(),
+        const Divider(
+          color: Colors.grey,
+        ),
       ],
     );
   }
