@@ -1,4 +1,4 @@
-git checkout -b TAXI_APP-Sign_up
+git checkout -b TAXI_APP-bank_detail
 git add .
-git commit -m "TAXI_APP-Sign_up"
-git push -u origin TAXI_APP-Sign_up
+git commit -m "TAXI_APP-bank_detail"
+git push -u origin TAXI_APP-bank_detail
