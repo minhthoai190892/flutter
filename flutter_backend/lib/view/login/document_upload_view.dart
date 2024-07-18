@@ -1,25 +1,43 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_backend/common/color_extension.dart';
+import 'package:flutter_backend/common_widget/document_row.dart';
 import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
-import 'package:flutter_backend/view/login/document_upload_view.dart';
 import 'package:flutter_backend/view/login/otp_view.dart';
 import 'package:flutter_backend/view/login/welcom_view.dart';
 
-class BankDetailsView extends StatefulWidget {
-  const BankDetailsView({super.key});
-
+class DocumentUploadView extends StatefulWidget {
+  const DocumentUploadView({super.key, required this.title});
+  final String title;
   @override
-  State<BankDetailsView> createState() => _BankDetailsViewState();
+  State<DocumentUploadView> createState() => _DocumentUploadViewState();
 }
 
-class _BankDetailsViewState extends State<BankDetailsView> {
-  TextEditingController txtBankName = TextEditingController();
-  TextEditingController txtAccountHolderName = TextEditingController();
-  TextEditingController txtAccountNumber = TextEditingController();
-  TextEditingController txtSwiftCode = TextEditingController();
-
+class _DocumentUploadViewState extends State<DocumentUploadView> {
+  List documentList = [
+    {
+      "name": "Lorem ipsum dolor sit amet",
+      "detail":
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos impedit commodi quam dolorum ",
+      "info": "",
+      "status": DocumentStatus.uploaded,
+    },
+    {
+      "name": "Lorem ipsum dolor sit amet 1",
+      "detail":
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos impedit commodi quam dolorum 1",
+      "info": "",
+      "status": DocumentStatus.uploading,
+    },
+    {
+      "name": "Lorem ipsum dolor sit amet 2",
+      "detail":
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos impedit commodi quam dolorum  2",
+      "info": "",
+      "status": DocumentStatus.upload,
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +46,7 @@ class _BankDetailsViewState extends State<BankDetailsView> {
         elevation: 1,
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
-          'Bank Details',
+          widget.title,
           style: TextStyle(
               color: TColor.primaryText,
               fontWeight: FontWeight.bold,
@@ -45,50 +63,22 @@ class _BankDetailsViewState extends State<BankDetailsView> {
               const SizedBox(
                 height: 30,
               ),
-              LineTextField(
-                title: 'Bank Name',
-                hintText: 'Ex SBI',
-                obscureText: true,
-                controller: txtBankName,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              LineTextField(
-                title: 'Account Holder Name',
-                hintText: 'Ex A Patel',
-                controller: txtAccountHolderName,
-                obscureText: true,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              LineTextField(
-                title: 'Account Number',
-                hintText: 'Ex A 1235467891234564',
-                controller: txtAccountNumber,
-                obscureText: true,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              LineTextField(
-                title: 'Swift/IFSC Code',
-                hintText: 'Ex YT123C',
-                controller: txtSwiftCode,
-                obscureText: true,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Divider(),
-              const SizedBox(
-                height: 15,
-              ),
+              ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    var dObj = documentList[index] as Map? ?? {};
+                    return DocumentRow(
+                        dObj: dObj,
+                        onPressed: () {},
+                        onInfo: () {},
+                        onUpload: () {},
+                        onAction: () {},
+                        status: dObj['status'] as DocumentStatus? ??
+                            DocumentStatus.upload);
+                  },
+                  separatorBuilder: (context, index) => const Divider(),
+                  itemCount: documentList.length),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -120,10 +110,7 @@ class _BankDetailsViewState extends State<BankDetailsView> {
               ),
               RoundButtonWidget(
                 title: 'NEXT',
-                onPressed: () {
-                  context.push(
-                      const DocumentUploadView(title: 'Personal Document'));
-                },
+                onPressed: () {},
               ),
             ],
           ),
