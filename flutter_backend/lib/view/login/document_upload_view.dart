@@ -71,7 +71,72 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
                     return DocumentRow(
                         dObj: dObj,
                         onPressed: () {},
-                        onInfo: () {},
+                        onInfo: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) {
+                              return Container(
+                                width: context.width,
+                                height: context.height - 100,
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 46, horizontal: 20),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 20),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.black12, blurRadius: 3)
+                                    ]),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Birth Certificate',
+                                      style: TextStyle(
+                                          color: TColor.primaryText,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 30),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Expanded(
+                                      child: SingleChildScrollView(
+                                        child: Text(
+                                          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos impedit commodi quam dolorum atque esse illoconsectetur ad distinctio, minus deserunt dignissimos sunt saepe ratione tempore vitae debitis odit? Recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam ad nihil numquam eum dicta est iure nam quas cumque quidem iusto, doloremque esse veniam labore, deserunt maiores! Explicabo, quibusdam.Lorem ipsum dolor sit amet consectetur adipisicing elit. \n\nQuos impedit commodi quam dolorum atque esse illoconsectetur ad distinctio, minus deserunt dignissimos sunt saepe ratione tempore vitae debitis odit? Recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam ad nihil numquam eum dicta est iure nam quas cumque quidem iusto, doloremque esse veniam labore, deserunt maiores! Explicabo, quibusdam. \n\nQuos impedit commodi quam dolorum atque esse illoconsectetur ad distinctio, minus deserunt dignissimos sunt saepe ratione tempore vitae debitis odit? Recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam ad nihil numquam eum dicta est iure nam quas cumque quidem iusto, doloremque esse veniam labore, deserunt maiores! Explicabo, quibusdam. \n\nQuos impedit commodi quam dolorum atque esse illoconsectetur ad distinctio, minus deserunt dignissimos sunt saepe ratione tempore vitae debitis odit? Recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam ad nihil numquam eum dicta est iure nam quas cumque quidem iusto, doloremque esse veniam labore, deserunt maiores! Explicabo, quibusdam.',
+                                          style: TextStyle(
+                                              color: TColor.secondaryText,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        TextButton(
+                                            onPressed: () {
+                                              context.pop();
+                                            },
+                                            child: Text(
+                                              'OK',
+                                              style: TextStyle(
+                                                  color: TColor.primary,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 15),
+                                            ))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
                         onUpload: () {},
                         onAction: () {},
                         status: dObj['status'] as DocumentStatus? ??
