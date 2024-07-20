@@ -19,6 +19,8 @@ class _OTPViewState extends State<OTPView> {
 
   @override
   Widget build(BuildContext context) {
+    print('OTPView');
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),

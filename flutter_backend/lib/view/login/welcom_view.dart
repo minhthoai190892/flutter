@@ -17,6 +17,8 @@ class WelcomView extends StatefulWidget {
 class _WelcomViewState extends State<WelcomView> {
   @override
   Widget build(BuildContext context) {
+    print('WelcomView');
+
     return Scaffold(
       // backgroundColor: TColor.bg,
       body: Stack(

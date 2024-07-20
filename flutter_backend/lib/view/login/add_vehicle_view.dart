@@ -5,31 +5,34 @@ import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
 import 'package:flutter_backend/view/login/document_upload_view.dart';
 import 'package:flutter_backend/view/login/otp_view.dart';
+import 'package:flutter_backend/view/login/vehicle_document_upload_view.dart';
 import 'package:flutter_backend/view/login/welcom_view.dart';
 
-class BankDetailsView extends StatefulWidget {
-  const BankDetailsView({super.key});
+class AddVehicleView extends StatefulWidget {
+  const AddVehicleView({super.key});
 
   @override
-  State<BankDetailsView> createState() => _BankDetailsViewState();
+  State<AddVehicleView> createState() => _AddVehicleViewState();
 }
 
-class _BankDetailsViewState extends State<BankDetailsView> {
-  TextEditingController txtBankName = TextEditingController();
-  TextEditingController txtAccountHolderName = TextEditingController();
-  TextEditingController txtAccountNumber = TextEditingController();
-  TextEditingController txtSwiftCode = TextEditingController();
+class _AddVehicleViewState extends State<AddVehicleView> {
+  TextEditingController txtServiceType = TextEditingController();
+  TextEditingController txtBrandName = TextEditingController();
+  TextEditingController txtModeName = TextEditingController();
+  TextEditingController txtManufacturer = TextEditingController();
+  TextEditingController txtNumberPlate = TextEditingController();
+  TextEditingController txtColor = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    print('BankDetailsView');
+    print('Add vehicle view ');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
-          'Bank Details',
+          'Add Vehicle',
           style: TextStyle(
               color: TColor.primaryText,
               fontWeight: FontWeight.bold,
@@ -47,29 +50,19 @@ class _BankDetailsViewState extends State<BankDetailsView> {
                 height: 30,
               ),
               LineTextField(
-                title: 'Bank Name',
-                hintText: 'Ex SBI',
+                title: 'Service Type',
+                hintText: 'Ex: Micro',
                 obscureText: true,
-                controller: txtBankName,
+                controller: txtServiceType,
                 keyboardType: TextInputType.text,
               ),
               const SizedBox(
                 height: 8,
               ),
               LineTextField(
-                title: 'Account Holder Name',
-                hintText: 'Ex A Patel',
-                controller: txtAccountHolderName,
-                obscureText: true,
-                keyboardType: TextInputType.text,
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              LineTextField(
-                title: 'Account Number',
-                hintText: 'Ex A 1235467891234564',
-                controller: txtAccountNumber,
+                title: 'Brand (Auto Suggestion)',
+                hintText: 'Ex: BMW',
+                controller: txtBrandName,
                 obscureText: true,
                 keyboardType: TextInputType.text,
               ),
@@ -77,54 +70,50 @@ class _BankDetailsViewState extends State<BankDetailsView> {
                 height: 8,
               ),
               LineTextField(
-                title: 'Swift/IFSC Code',
-                hintText: 'Ex YT123C',
-                controller: txtSwiftCode,
+                title: 'Model (Auto Suggestion)',
+                hintText: 'Ex: ABC',
+                controller: txtModeName,
                 obscureText: true,
                 keyboardType: TextInputType.text,
               ),
               const SizedBox(
                 height: 8,
+              ),
+              LineTextField(
+                title: 'Manufacturer',
+                hintText: 'Ex: BMW',
+                controller: txtManufacturer,
+                obscureText: true,
+                keyboardType: TextInputType.text,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              LineTextField(
+                title: 'Number Plate',
+                hintText: 'Ex: YT123456',
+                controller: txtNumberPlate,
+                obscureText: true,
+                keyboardType: TextInputType.text,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              LineTextField(
+                title: 'Color',
+                hintText: 'Ex: red',
+                controller: txtColor,
+                obscureText: true,
+                keyboardType: TextInputType.text,
               ),
               const Divider(),
               const SizedBox(
                 height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'By continuing, I confirm that i have read & agree to the ',
-                    style: TextStyle(color: TColor.secondaryText, fontSize: 11),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Terms & conditions',
-                    style: TextStyle(color: TColor.primaryText, fontSize: 11),
-                  ),
-                  Text(
-                    ' and ',
-                    style: TextStyle(color: TColor.secondaryText, fontSize: 11),
-                  ),
-                  Text(
-                    'Privacy & privacy',
-                    style: TextStyle(color: TColor.primaryText, fontSize: 11),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
               RoundButtonWidget(
-                title: 'NEXT',
-                onPressed: () {
-                  context.push(
-                      const DocumentUploadView(title: 'Personal Document'));
-                },
+                title: 'REGISTER',
+                onPressed: () =>
+                    context.push(const VehicleDocumentUploadView()),
               ),
             ],
           ),

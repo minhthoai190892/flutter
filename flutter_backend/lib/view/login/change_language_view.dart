@@ -20,6 +20,8 @@ class _ChangeLanguageViewState extends State<ChangeLanguageView> {
   int selectChange = 2;
   @override
   Widget build(BuildContext context) {
+    print('ChangeLanguageView');
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),

@@ -1,4 +1,4 @@
-git checkout -b TAXI_APP-document_upload_view_2
+git checkout -b TAXI_APP-Add_Vehicle_Document_Upload_Subscription_Plan
 git add .
-git commit -m "TAXI_APP-document_upload_view_2"
-git push -u origin TAXI_APP-document_upload_view_2
+git commit -m "TAXI_APP-Add_Vehicle_Document_Upload_Subscription_Plan"
+git push -u origin TAXI_APP-Add_Vehicle_Document_Upload_Subscription_Plan

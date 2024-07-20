@@ -29,6 +29,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    print('SplashView');
+
     return Scaffold(
       backgroundColor: TColor.bg,
       body: Stack(

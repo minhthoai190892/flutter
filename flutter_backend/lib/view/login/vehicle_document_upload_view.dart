@@ -6,16 +6,18 @@ import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
 import 'package:flutter_backend/view/login/add_vehicle_view.dart';
 import 'package:flutter_backend/view/login/otp_view.dart';
+import 'package:flutter_backend/view/login/subscription_plan_view.dart';
 import 'package:flutter_backend/view/login/welcom_view.dart';
 
-class DocumentUploadView extends StatefulWidget {
-  const DocumentUploadView({super.key, required this.title});
-  final String title;
+class VehicleDocumentUploadView extends StatefulWidget {
+  const VehicleDocumentUploadView({super.key});
+
   @override
-  State<DocumentUploadView> createState() => _DocumentUploadViewState();
+  State<VehicleDocumentUploadView> createState() =>
+      _VehicleDocumentUploadViewState();
 }
 
-class _DocumentUploadViewState extends State<DocumentUploadView> {
+class _VehicleDocumentUploadViewState extends State<VehicleDocumentUploadView> {
   List documentList = [
     {
       "name": "Lorem ipsum dolor sit amet",
@@ -41,7 +43,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
   ];
   @override
   Widget build(BuildContext context) {
-    print('DocumentUploadView');
+    print('VehicleDocumentUploadView');
 
     return Scaffold(
       appBar: AppBar(
@@ -49,7 +51,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
         elevation: 1,
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
-          widget.title,
+          'Vehicle Document',
           style: TextStyle(
               color: TColor.primaryText,
               fontWeight: FontWeight.bold,
@@ -98,7 +100,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Birth Certificate',
+                                      'RC Book',
                                       style: TextStyle(
                                           color: TColor.primaryText,
                                           fontWeight: FontWeight.bold,
@@ -178,7 +180,7 @@ class _DocumentUploadViewState extends State<DocumentUploadView> {
               ),
               RoundButtonWidget(
                 title: 'NEXT',
-                onPressed: () => context.push(const AddVehicleView()),
+                onPressed: () => context.push(const SubscriptionPlanView()),
               ),
             ],
           ),
