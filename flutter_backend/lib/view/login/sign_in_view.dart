@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_backend/common/color_extension.dart';
 import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
-import 'package:flutter_backend/view/login/otp_view.dart';
-import 'package:flutter_backend/view/login/welcom_view.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_backend/common/color_extension.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
-import 'package:flutter_backend/view/login/change_language_view.dart';
-import 'package:flutter_backend/view/login/mobile_number_view.dart';
 import 'package:flutter_backend/view/login/sign_in_view.dart';
 import 'package:flutter_backend/view/login/sign_up_view.dart';
 

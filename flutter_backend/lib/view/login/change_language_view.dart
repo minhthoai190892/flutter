@@ -49,7 +49,7 @@ class _ChangeLanguageViewState extends State<ChangeLanguageView> {
                   setState(() {
                     selectChange = index;
                   });
-                  context.push(WelcomView());
+                  context.push(const WelcomView());
                 },
                 title: Text(
                   listArr[index],

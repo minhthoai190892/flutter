@@ -4,8 +4,6 @@ import 'package:flutter_backend/common/color_extension.dart';
 import 'package:flutter_backend/common_widget/line_text_field.dart';
 import 'package:flutter_backend/common_widget/round_button_widget.dart';
 import 'package:flutter_backend/view/login/bank_detail_view.dart';
-import 'package:flutter_backend/view/login/otp_view.dart';
-import 'package:flutter_backend/view/login/welcom_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -184,7 +182,7 @@ class _SignUpViewState extends State<SignUpView> {
               RoundButtonWidget(
                 title: 'REGISTER',
                 onPressed: () {
-                  context.push(BankDetailsView());
+                  context.push(const BankDetailsView());
                 },
               ),
             ],

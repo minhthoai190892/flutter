@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_backend/common/color_extension.dart';
+import 'package:flutter_backend/view/home/home_view.dart';
 import 'package:flutter_backend/view/login/change_language_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -24,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void loadNextScreen() {
-    context.push(const ChangeLanguageView());
+    context.push(const HomeView());
   }
 
   @override
