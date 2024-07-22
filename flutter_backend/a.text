@@ -1,4 +1,8 @@
-git checkout -b TAXI_APP-splash-1
+git checkout -b TAXI_APP-OpenStreetMaps
 git add .
-git commit -m "TAXI_APP-splash-1"
-git push -u origin TAXI_APP-splash-1
+git commit -m "TAXI_APP-OpenStreetMaps"
+git push -u origin TAXI_APP-OpenStreetMaps
+
+
+ext.kotlin_version = <'latest version'> error on Flutter
+https://stackoverflow.com/questions/70518020/ext-kotlin-version-latest-version-error-on-flutter
