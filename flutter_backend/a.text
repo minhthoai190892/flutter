@@ -1,8 +1,12 @@
-git checkout -b TAXI_APP-OpenStreetMaps
+git checkout -b TAXI_APP-HomeScreen
 git add .
-git commit -m "TAXI_APP-OpenStreetMaps"
-git push -u origin TAXI_APP-OpenStreetMaps
+git commit -m "TAXI_APP-HomeScreen"
+git push -u origin TAXI_APP-HomeScreen
 
 
 ext.kotlin_version = <'latest version'> error on Flutter
 https://stackoverflow.com/questions/70518020/ext-kotlin-version-latest-version-error-on-flutter
+
+
+adb pair 192.168.101.32:
+adb connect 192.168.101.32:
