@@ -1,7 +1,7 @@
-git checkout -b TAXI_APP-HomeScreen
+git checkout -b TAXI_APP-HomeScreen1
 git add .
-git commit -m "TAXI_APP-HomeScreen"
-git push -u origin TAXI_APP-HomeScreen
+git commit -m "TAXI_APP-HomeScreen1"
+git push -u origin TAXI_APP-HomeScreen1
 
 
 ext.kotlin_version = <'latest version'> error on Flutter
