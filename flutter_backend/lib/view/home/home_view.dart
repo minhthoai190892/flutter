@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_backend/common/color_extension.dart';
+import 'package:flutter_backend/common_widget/icon_title_subtitle.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
   MapController controller = MapController(
     initPosition: GeoPoint(latitude: 47.4358055, longitude: 8.4737324),
   );
+  bool isOpen = true;
   @override
   void dispose() {
     // TODO: implement dispose
@@ -168,9 +171,15 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              isOpen = !isOpen;
+                            });
+                          },
                           icon: Image.network(
-                            'https://img.icons8.com/?size=100&id=86205&format=png&color=000000',
+                            isOpen
+                                ? 'https://img.icons8.com/?size=100&id=102286&format=png&color=000000'
+                                : 'https://img.icons8.com/?size=100&id=102290&format=png&color=000000',
                             width: 15,
                             height: 15,
                           ),
@@ -188,43 +197,161 @@ class _HomeViewState extends State<HomeView> {
                         )
                       ],
                     ),
-                    const Divider(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                            child: Column(
-                          children: [
-                            Image.network(
-                              'https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png&color=000000',
-                              width: 20,
-                              height: 20,
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              '95.0%',
-                              style: TextStyle(
-                                  color: TColor.primaryText,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              'Acceptance',
-                              style: TextStyle(
-                                  color: TColor.secondaryText,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w800),
-                            ),
-                          ],
-                        )),
-                      ],
-                    )
+                    if (isOpen)
+                      Container(
+                        width: double.maxFinite,
+                        height: 0.5,
+                        decoration: BoxDecoration(
+                            color: TColor.placeholder.withOpacity(0.5)),
+                      ),
+                    if (isOpen)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconTitleSubtitleButton(
+                            title: '95.5%',
+                            subTitle: 'Acceptance',
+                            icon:
+                                'https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png&color=000000',
+                            onPressed: () {},
+                          ),
+                          Container(
+                            width: 0.5,
+                            height: 100,
+                            decoration: BoxDecoration(
+                                color: TColor.placeholder.withOpacity(0.5)),
+                          ),
+                          IconTitleSubtitleButton(
+                            title: '4.75',
+                            subTitle: 'Rating',
+                            icon:
+                                'https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png&color=000000',
+                            onPressed: () {},
+                          ),
+                          Container(
+                            width: 0.5,
+                            height: 100,
+                            decoration: BoxDecoration(
+                                color: TColor.placeholder.withOpacity(0.5)),
+                          ),
+                          IconTitleSubtitleButton(
+                            title: '2.0%',
+                            subTitle: 'Cancelleation',
+                            icon:
+                                'https://img.icons8.com/?size=100&id=sz8cPVwzLrMP&format=png&color=000000',
+                            onPressed: () {},
+                          ),
+                        ],
+                      )
                   ],
                 ),
               )
             ],
+          ),
+          SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const SizedBox(
+                      width: 60,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 10,
+                              offset: Offset(0, -5))
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            '\$',
+                            style: TextStyle(
+                                color: TColor.secondary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            '157.50',
+                            style: TextStyle(
+                                color: TColor.primary,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 60,
+                      child: Stack(
+                        alignment: Alignment.bottomLeft,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Colors.black12,
+                                    blurRadius: 10,
+                                    offset: Offset(0, -5))
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                'https://img.icons8.com/?size=100&id=21441&format=png&color=000000',
+                                width: 40,
+                                height: 40,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Colors.black12,
+                                    blurRadius: 10,
+                                    offset: Offset(0, -5))
+                              ],
+                            ),
+                            constraints: const BoxConstraints(minWidth: 15),
+                            child: const Text(
+                              '3',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),
