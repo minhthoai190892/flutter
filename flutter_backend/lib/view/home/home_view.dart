@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_backend/common/color_extension.dart';
 import 'package:flutter_backend/common_widget/icon_title_subtitle.dart';
+import 'package:flutter_backend/view/home/tip_request_view.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
 class HomeView extends StatefulWidget {
@@ -92,7 +93,9 @@ class _HomeViewState extends State<HomeView> {
                       width: 40,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context.push(TipRequestView());
+                      },
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
@@ -275,7 +278,7 @@ class _HomeViewState extends State<HomeView> {
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             '\$',
